@@ -1,0 +1,12 @@
+{
+  "name": "campusfind",
+  "version": "1.0.0",
+  "description": "CampusFind — Cloud-Based Campus Lost & Found System",
+  "private": true,
+  "scripts": {
+    "server": "npm --prefix server start",
+    "client": "npm --prefix client dev",
+    "db:init": "npm --prefix server run db:init",
+    "build": "npm --prefix client run build"
+  }
+}
