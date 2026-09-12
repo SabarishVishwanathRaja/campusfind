@@ -1,0 +1,696 @@
+{
+  "info": {
+    "_postman_id": "9f7d26b0-4c31-482a-a5f1-campusfind2026",
+    "name": "CampusFind API Collection",
+    "description": "Comprehensive Postman collection for CampusFind - Cloud-Based Campus Lost & Found System. Covers Authentication, Users, Categories, Items, and Claims with automated token capture.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health & Root",
+      "item": [
+        {
+          "name": "API Root",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": ["{{baseUrl}}"],
+              "path": [""]
+            }
+          }
+        },
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "health"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login Admin (Auto Token Save)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    var json = pm.response.json();",
+                  "    if (json.token) {",
+                  "        pm.collectionVariables.set('token', json.token);",
+                  "        console.log('Token automatically saved to collection variables');",
+                  "    }",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@campusfind.edu\",\n  \"password\": \"Admin@123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/login",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "auth", "login"]
+            }
+          }
+        },
+        {
+          "name": "Login Student (Arjun)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    var json = pm.response.json();",
+                  "    if (json.token) {",
+                  "        pm.collectionVariables.set('token', json.token);",
+                  "        console.log('Student token saved to collection variables');",
+                  "    }",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"arjun@student.edu\",\n  \"password\": \"Student@123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/login",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "auth", "login"]
+            }
+          }
+        },
+        {
+          "name": "Register Student",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Suresh Kumar\",\n  \"email\": \"suresh@student.edu\",\n  \"password\": \"Student@123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/register",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "auth", "register"]
+            }
+          }
+        },
+        {
+          "name": "Get Current Profile (/me)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/me",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "auth", "me"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "List All Users (Admin)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/users",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "users"]
+            }
+          }
+        },
+        {
+          "name": "Get User by ID (Self or Admin)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/users/2",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "users", "2"]
+            }
+          }
+        },
+        {
+          "name": "Create User (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Faculty Admin\",\n  \"email\": \"faculty@campusfind.edu\",\n  \"password\": \"Faculty@123\",\n  \"role\": \"ADMIN\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "users"]
+            }
+          }
+        },
+        {
+          "name": "Update User (Self or Admin)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Arjun Patel Updated\",\n  \"role\": \"STUDENT\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/2",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "users", "2"]
+            }
+          }
+        },
+        {
+          "name": "Delete User (Admin)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/users/4",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "users", "4"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "List All Categories",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/categories",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "categories"]
+            }
+          }
+        },
+        {
+          "name": "Get Category by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/categories/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "categories", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create Category (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Sports Gear\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/categories",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "categories"]
+            }
+          }
+        },
+        {
+          "name": "Update Category (Admin)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Athletics & Sports\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/categories/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "categories", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Category (Admin)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/categories/6",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "categories", "6"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Items",
+      "item": [
+        {
+          "name": "Browse Items (Filters & Search)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/items?type=LOST&status=OPEN&page=1&limit=12&q=",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "items"],
+              "query": [
+                { "key": "type", "value": "LOST" },
+                { "key": "status", "value": "OPEN" },
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "12" },
+                { "key": "q", "value": "" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Item by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/items/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "items", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get My Reported Items",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/items/mine/list",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "items", "mine", "list"]
+            }
+          }
+        },
+        {
+          "name": "Report Item (Multipart Form)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "title", "value": "Silver MacBook Pro 14", "type": "text" },
+                { "key": "description", "value": "Left in room 302 after CS lecture", "type": "text" },
+                { "key": "type", "value": "LOST", "type": "text" },
+                { "key": "location", "value": "Computer Science Block, Room 302", "type": "text" },
+                { "key": "item_date", "value": "2026-09-07", "type": "text" },
+                { "key": "category_id", "value": "1", "type": "text" },
+                { "key": "image", "type": "file", "src": "" }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/items",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "items"]
+            }
+          }
+        },
+        {
+          "name": "Update Item (Owner or Admin)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "title", "value": "Silver MacBook Pro 14 (Updated)", "type": "text" },
+                { "key": "location", "value": "CS Block 3rd Floor Lab", "type": "text" }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/items/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "items", "1"]
+            }
+          }
+        },
+        {
+          "name": "Update Item Status (Admin)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"CLAIMED\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/items/1/status",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "items", "1", "status"]
+            }
+          }
+        },
+        {
+          "name": "Delete Item (Owner or Admin)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/items/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "items", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Claims",
+      "item": [
+        {
+          "name": "List All Claims (Admin)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/claims?status=PENDING",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "claims"],
+              "query": [
+                { "key": "status", "value": "PENDING" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "List My Claims",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/claims/mine/list",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "claims", "mine", "list"]
+            }
+          }
+        },
+        {
+          "name": "Get Claim by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/claims/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "claims", "1"]
+            }
+          }
+        },
+        {
+          "name": "Submit Claim on Item",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"item_id\": 2,\n  \"message\": \"This is my college ID card. Roll number: 21CS042 with red lanyard.\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/claims",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "claims"]
+            }
+          }
+        },
+        {
+          "name": "Update Claim Message (Pending Only)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"message\": \"Updated proof details: I can also show my duplicate receipt from college office.\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/claims/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "claims", "1"]
+            }
+          }
+        },
+        {
+          "name": "Approve Claim (Transaction)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"APPROVED\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/claims/1/status",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "claims", "1", "status"]
+            }
+          }
+        },
+        {
+          "name": "Reject Claim (Admin)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"REJECTED\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/claims/2/status",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "claims", "2", "status"]
+            }
+          }
+        },
+        {
+          "name": "Delete / Cancel Claim",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/claims/3",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "claims", "3"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
