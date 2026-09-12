@@ -3,6 +3,13 @@
 > **A University Course Project for Cloud Computing**  
 > *Demonstrating Managed DBaaS, PaaS Compute, Decoupled Object Storage, and Stateless JWT Architecture.*
 
+### 🌐 Live Production Links
+- **Deployed Web Application (Vercel)**: [https://client-olive-five-17.vercel.app](https://client-olive-five-17.vercel.app)
+- **Backend API Health Check (Render)**: [https://campusfind-api-ncig.onrender.com/api/health](https://campusfind-api-ncig.onrender.com/api/health)
+- **Cloud Database (Neon DBaaS)**: Serverless PostgreSQL on AWS Singapore (`ap-southeast-1`)
+- **Media Storage & CDN (Cloudinary)**: Object store & optimized media delivery
+- **GitHub Repository**: [https://github.com/SabarishVishwanathRaja/campusfind](https://github.com/SabarishVishwanathRaja/campusfind)
+
 ---
 
 ## 1. The Problem Being Solved
