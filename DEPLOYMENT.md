@@ -63,11 +63,16 @@ cd d:\PROJECTS\CampusFind
      postgresql://campusfind_owner:AbCdEf123456@ep-cool-fog-123456.us-east-2.aws.neon.tech/campusfind-db?sslmode=require
      ```
    - **Save this URL** — this is your `DATABASE_URL`.
-4. In the Neon sidebar, click **SQL Editor**.
-5. Open your local file `db/schema.sql`, copy all text, paste it into the Neon SQL Editor, and click **Run**.
-   - Confirm output says `CREATE TABLE` and `CREATE INDEX` without errors.
-6. Open your local file `db/seed.sql`, copy all text, paste it into the Neon SQL Editor, and click **Run**.
-   - Confirm output shows successful insertion of 6 categories, 4 users, 8 items, and 3 claims.
+6. **Initialize Tables and Seed Data** (Choose either method below):
+   - **Method A (Fastest — 1-Click CLI)**:
+     Update `DATABASE_URL` in `server/.env` with your copied Neon connection string, then run:
+     ```powershell
+     cd server
+     npm run db:init
+     ```
+     This automatically executes `db/schema.sql` and `db/seed.sql`, verifies table counts, and displays the demo seed credentials.
+   - **Method B (Neon Console SQL Editor)**:
+     In the Neon sidebar, click **SQL Editor**. Copy and paste `db/schema.sql`, click **Run**, then copy and paste `db/seed.sql`, and click **Run**.
 7. Click **Tables** in the Neon sidebar to confirm that `users`, `categories`, `items`, and `claims` are populated.
 
 ---
