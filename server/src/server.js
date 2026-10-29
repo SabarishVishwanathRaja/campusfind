@@ -48,12 +48,20 @@ app.use(
 // Body parsing middleware
 app.use(express.json());
 
+// Multi-instance identification header
+const os = require('os');
+app.use((req, res, next) => {
+  res.setHeader('X-Backend-Instance', process.env.INSTANCE_ID || os.hostname());
+  next();
+});
+
 // Root endpoint
 app.get('/', (req, res) => {
   res.json({
     name: 'CampusFind API',
     version: '1.0.0',
-    status: 'ok'
+    status: 'ok',
+    instance: process.env.INSTANCE_ID || os.hostname()
   });
 });
 
@@ -63,7 +71,8 @@ app.get('/api/health', async (req, res) => {
     await db.query('SELECT 1');
     res.json({
       status: 'ok',
-      db: 'connected'
+      db: 'connected',
+      instance: process.env.INSTANCE_ID || os.hostname()
     });
   } catch (error) {
     res.json({
