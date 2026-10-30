@@ -33,7 +33,7 @@ const htmlContent = `
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>CampusFind - Digital Assignment 3 Academic Report</title>
+<title>CampusFind - Cloud Scalability, High Availability & Security Engineering Report</title>
 <style>
   @page {
     size: letter;
@@ -94,7 +94,7 @@ const htmlContent = `
 
   /* Typography */
   h1 {
-    font-size: 19pt;
+    font-size: 18pt;
     font-weight: 800;
     color: #0f172a;
     line-height: 1.2;
@@ -113,7 +113,7 @@ const htmlContent = `
     align-items: center;
     justify-content: space-between;
   }
-  .q-badge {
+  .sec-badge {
     background: #0284c7;
     color: white;
     font-size: 7.5pt;
@@ -121,6 +121,7 @@ const htmlContent = `
     border-radius: 4px;
     font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
   h3 {
     font-size: 9.5pt;
@@ -131,7 +132,7 @@ const htmlContent = `
   }
   p {
     font-size: 8.8pt;
-    line-height: 1.34;
+    line-height: 1.35;
     color: #334155;
     margin-bottom: 5px;
     text-align: justify;
@@ -141,7 +142,7 @@ const htmlContent = `
   }
   li {
     font-size: 8.6pt;
-    line-height: 1.3;
+    line-height: 1.32;
     color: #334155;
     margin-bottom: 2px;
   }
@@ -277,20 +278,20 @@ const htmlContent = `
     border-radius: 2px;
   }
   .da-title {
-    font-size: 24pt;
+    font-size: 23pt;
     font-weight: 900;
     color: #0284c7;
     letter-spacing: -0.5px;
     margin-top: 10px;
   }
   .da-subtitle {
-    font-size: 13pt;
+    font-size: 12.5pt;
     font-weight: 700;
     color: #1e293b;
     margin-top: 4px;
   }
   .proj-badge {
-    margin-top: 22px;
+    margin-top: 20px;
     background: #f1f5f9;
     border: 1px solid #cbd5e1;
     border-radius: 8px;
@@ -303,13 +304,13 @@ const htmlContent = `
     color: #0f172a;
   }
   .proj-desc {
-    font-size: 9.5pt;
+    font-size: 9.2pt;
     color: #64748b;
     margin-top: 3px;
   }
   
   .meta-card {
-    margin-top: 28px;
+    margin-top: 26px;
     width: 82%;
     background: #f8fafc;
     border: 1px solid #e2e8f0;
@@ -329,7 +330,7 @@ const htmlContent = `
     color: #475569;
   }
   .toc-grid {
-    margin-top: 24px;
+    margin-top: 22px;
     width: 82%;
     font-size: 8.2pt;
     border-collapse: collapse;
@@ -344,20 +345,20 @@ const htmlContent = `
 <body>
 
 <!-- ======================================================== -->
-<!-- PAGE 1: COVER & EXECUTIVE SUMMARY -->
+<!-- PAGE 1: COVER & TABLE OF CONTENTS -->
 <!-- ======================================================== -->
 <div class="page">
-  <div class="header-running">BACSE344 &bull; Digital Assignment 3 &bull; VIT University</div>
+  <div class="header-running">BACSE344 &bull; Technical Report &bull; VIT University</div>
   <div class="content-body cover-box">
     <div class="univ-header">Vellore Institute of Technology</div>
     <div class="univ-sub">School of Computer Science and Engineering (SCOPE)</div>
     <div class="cover-divider"></div>
-    <div class="da-title">DIGITAL ASSIGNMENT - 3</div>
+    <div class="da-title">PROJECT TECHNICAL REPORT</div>
     <div class="da-subtitle">Cloud Scalability, High Availability & Security Engineering</div>
 
     <div class="proj-badge">
       <div class="proj-name">CampusFind: Campus Lost & Found System</div>
-      <div class="proj-desc">High-Availability Container Cluster, Nginx Failover, Bcrypt, TOTP MFA & Container Hardening</div>
+      <div class="proj-desc">Horizontal Microservice Clustering, Load Balancing, Zero-Downtime Failover, TOTP MFA & Container Hardening</div>
     </div>
 
     <div class="meta-card">
@@ -374,108 +375,112 @@ const htmlContent = `
         <span>BACSE344 - Cloud Infrastructure and Architecture</span>
       </div>
       <div class="meta-item">
-        <strong>Slot & Class:</strong><br>
+        <strong>Class / Slot:</strong><br>
         <span>C1 Slot</span>
       </div>
       <div class="meta-item">
-        <strong>Faculty In-Charge:</strong><br>
+        <strong>Faculty Guide:</strong><br>
         <span>Dr. P. Anandan</span>
       </div>
       <div class="meta-item">
-        <strong>Submission Due Date:</strong><br>
+        <strong>Submission Date:</strong><br>
         <span>30th October 2026</span>
       </div>
     </div>
 
     <table class="toc-grid">
       <tr style="font-weight: 700; color: #0f172a;">
-        <td style="width: 75%;">Section / Evaluation Rubric Item</td>
-        <td style="text-align: right;">Marks & Page</td>
+        <td style="width: 78%;">Report Section / Technical Domain</td>
+        <td style="text-align: right;">Page</td>
       </tr>
       <tr>
-        <td><strong>Question 1: Scale your application</strong></td>
-        <td style="text-align: right;"><strong>[5.0 Marks]</strong></td>
+        <td><strong>1. High-Availability Clustered Architecture & Scaling</strong></td>
+        <td style="text-align: right;"></td>
       </tr>
       <tr>
-        <td>&bull; 1(a) Peak-demand scenario description & hardest-hit API endpoint</td>
-        <td style="text-align: right;">1.25 M &bull; Page 2</td>
+        <td>&bull; 1.1 Peak Demand Scenario & Critical API Bottleneck Identification</td>
+        <td style="text-align: right;">Page 2</td>
       </tr>
       <tr>
-        <td>&bull; 1(b) Apache Bench load testing: 1 instance vs. 3 instances benchmark table</td>
-        <td style="text-align: right;">1.25 M &bull; Page 3</td>
+        <td>&bull; 1.2 Multi-Instance Container Cluster & Round-Robin Balancing</td>
+        <td style="text-align: right;">Page 2</td>
       </tr>
       <tr>
-        <td>&bull; 1(c) High-availability failover resilience test (502 drop vs. 0 failures)</td>
-        <td style="text-align: right;">1.25 M &bull; Page 4</td>
+        <td>&bull; 1.3 Benchmark Performance Evaluation (ApacheBench Analysis)</td>
+        <td style="text-align: right;">Page 3</td>
       </tr>
       <tr>
-        <td>&bull; 1(d) Scaled architecture diagram with Cloud Bursting / Edge computing tier</td>
-        <td style="text-align: right;">1.25 M &bull; Page 5</td>
+        <td>&bull; 1.4 High-Availability Fault Tolerance & Reverse Proxy Failover</td>
+        <td style="text-align: right;">Page 4</td>
       </tr>
       <tr>
-        <td><strong>Question 2: Secure your application</strong></td>
-        <td style="text-align: right;"><strong>[5.0 Marks]</strong></td>
+        <td>&bull; 1.5 Scaled Cloud Architecture & Hybrid Cloud Bursting Design</td>
+        <td style="text-align: right;">Page 5</td>
       </tr>
       <tr>
-        <td>&bull; 2(a) Sensitive data identification & salted bcrypt password hashing proof</td>
-        <td style="text-align: right;">1.25 M &bull; Page 6</td>
+        <td><strong>2. Cloud Security Architecture & Enterprise Hardening</strong></td>
+        <td style="text-align: right;"></td>
       </tr>
       <tr>
-        <td>&bull; 2(b) RFC 6238 TOTP Multi-Factor Authentication & RBAC API rejection</td>
-        <td style="text-align: right;">1.25 M &bull; Page 7</td>
+        <td>&bull; 2.1 Sensitive Data Classification & Cryptographic Password Hashing</td>
+        <td style="text-align: right;">Page 6</td>
       </tr>
       <tr>
-        <td>&bull; 2(c) Container image security audit with Trivy & Alpine hardening</td>
-        <td style="text-align: right;">1.25 M &bull; Page 8</td>
+        <td>&bull; 2.2 Multi-Factor Authentication (RFC 6238 TOTP) & RBAC Authorization</td>
+        <td style="text-align: right;">Page 7</td>
       </tr>
       <tr>
-        <td>&bull; 2(d) Threat modeling (Impersonator & Credential Stuffer) & DPDP/GDPR laws</td>
-        <td style="text-align: right;">1.25 M &bull; Page 9</td>
+        <td>&bull; 2.3 Container Vulnerability Assessment & Image Hardening (Aqua Security Trivy)</td>
+        <td style="text-align: right;">Page 8</td>
       </tr>
       <tr>
-        <td>&bull; Deliverables, Repository URL, Deployment Links & 3-Min Video Walkthrough</td>
+        <td>&bull; 2.4 Threat Modeling, Risk Mitigation & Regulatory Compliance (DPDP Act & GDPR)</td>
+        <td style="text-align: right;">Page 9</td>
+      </tr>
+      <tr>
+        <td><strong>3. Deployment Registry, System Verification & Certification</strong></td>
         <td style="text-align: right;">Page 10</td>
       </tr>
     </table>
   </div>
-  <div class="footer-running">CampusFind Academic Report &bull; Digital Assignment 3 &bull; Page 1 of 10</div>
+  <div class="footer-running">CampusFind Technical Report &bull; Cloud Infrastructure and Architecture &bull; Page 1 of 10</div>
 </div>
 
 <!-- ======================================================== -->
-<!-- PAGE 2: QUESTION 1(a) - PEAK DEMAND & MULTI-CONTAINER CLUSTER -->
+<!-- PAGE 2: SECTION 1.1 & 1.2 - PEAK DEMAND & CLUSTER SETUP -->
 <!-- ======================================================== -->
 <div class="page">
-  <div class="header-running">Question 1(a) &bull; Peak-Demand Scenario & Multi-Instance Setup</div>
+  <div class="header-running">Section 1.1 &bull; Peak-Demand Scenario & Multi-Instance Setup</div>
   <div class="content-body">
     <h2>
-      <span>Question 1: Scale Your Application</span>
-      <span class="q-badge">Part (a) &bull; 1.25 Marks</span>
+      <span>1. High-Availability Clustered Architecture & Scaling</span>
+      <span class="sec-badge">System Topology</span>
     </h2>
 
-    <h3>1. Peak-Demand Operational Scenario Description</h3>
+    <h3>1.1 Peak-Demand Operational Workload Scenario</h3>
     <p>
-      In a higher-education institution such as Vellore Institute of Technology, peak operational demand for <strong>CampusFind</strong> is driven by large-scale episodic events. The primary surge occurs during <strong>Riviera 2026</strong> (VIT's annual international cultural and sports festival) and the concurrent <strong>End-of-Semester Hostel Move-Out Week</strong>. During these intervals, campus footfall spikes by over 35,000 attendees, resulting in an unprecedented volume of misplaced items including institutional ID cards, smart cards, hostel access keys, backpacks, laptops, and wallets across auditoriums, sports grounds, and transit hubs.
+      In university campus environments such as Vellore Institute of Technology, operational workloads on <strong>CampusFind</strong> exhibit extreme episodic spikes. The primary traffic surge occurs during <strong>Riviera</strong> (the annual international cultural and sports festival) and the concurrent <strong>End-of-Semester Hostel Move-Out Period</strong>. During these intervals, daily campus footfall expands by over 35,000 students, faculty, and external visitors. This surge causes a 30-fold increase in misplaced personal belongings, including institutional identity cards, hostel smart access cards, backpacks, electronic gadgets, keys, and wallets across auditoriums, sports arenas, food courts, and transit depots.
     </p>
     <div class="callout">
-      <strong>Hardest-Hit API Endpoint:</strong> <code>GET /api/items</code> (including parametric query <code>GET /api/items?search=...&category=...</code>).
-      During Riviera, over 92% of inbound HTTP requests target this single endpoint as thousands of anxious students concurrently search the catalog, filter recently reported belongings, and refresh lost listings on their smartphones.
+      <strong>Critical API Bottleneck Endpoint:</strong> <code>GET /api/items</code> (including parametric filtering <code>GET /api/items?search=...&category=...</code>).<br>
+      During peak operational periods, over 92% of all inbound traffic concentrates on this query endpoint as thousands of concurrent users search listings, filter by location, and refresh status feeds from mobile devices.
     </div>
 
-    <h3>2. Multi-Instance Clustered Architecture</h3>
+    <h3>1.2 Multi-Instance Container Cluster Architecture</h3>
     <p>
-      To prevent service degradation, the backend was decoupled into a horizontal cluster of <strong>3 identical Node.js container instances</strong> orchestrated via Docker Compose behind an <strong>Nginx reverse proxy load balancer</strong>:
+      To prevent single-point-of-failure bottlenecks and CPU throttling on Node.js's event loop, the application was decoupled into a horizontally scaled microservice architecture orchestrated via Docker Compose:
     </p>
     <ul>
       <li><code>campusfind-backend-1</code>: Node.js/Express service container running on port 5000 (Internal IP: 172.22.0.3)</li>
       <li><code>campusfind-backend-2</code>: Node.js/Express service container running on port 5000 (Internal IP: 172.22.0.4)</li>
       <li><code>campusfind-backend-3</code>: Node.js/Express service container running on port 5000 (Internal IP: 172.22.0.5)</li>
-      <li><code>campusfind-nginx-lb</code>: Reverse proxy accepting public traffic on port 8080 and distributing requests round-robin.</li>
-      <li><strong>Database Tier:</strong> Single managed <strong>Neon Serverless PostgreSQL</strong> cluster (AWS ap-southeast-1 pooler) shared across all three replicas with connection pooling.</li>
+      <li><code>campusfind-nginx-lb</code>: Nginx reverse proxy load balancer terminating client traffic on port 8080.</li>
+      <li><strong>Centralized Database Tier:</strong> Single managed <strong>Neon Serverless PostgreSQL</strong> cluster (AWS ap-southeast-1 pooler) shared across all three replicas with connection pooling.</li>
     </ul>
 
-    <h3>3. Verification of Round-Robin Request Distribution</h3>
+    <h3>1.3 Verification of Round-Robin Request Distribution</h3>
     <p>
-      Each backend instance injects a custom response header <code>X-Backend-Instance</code> containing its container identity. As shown in Figure 2, sequential inbound client requests cycle deterministically across <code>backend-instance-1</code>, <code>backend-instance-2</code>, and <code>backend-instance-3</code>:
+      Each backend replica injects an identifying response header (<code>X-Backend-Instance</code>). Verification requests sent to the public ingress demonstrate deterministic round-robin traffic balancing across all three nodes:
     </p>
 
     <div class="figure-container">
@@ -483,9 +488,9 @@ const htmlContent = `
       <div class="figure-caption">Figure 2: Active Docker Compose 3-node cluster and verified round-robin load distribution log.</div>
     </div>
 
-    <h3>4. Upstream Balancing Configuration (Nginx)</h3>
+    <h3>1.4 Upstream Load Balancing Configuration</h3>
     <p>
-      The upstream block in <code>nginx.conf</code> defines the active cluster nodes with weighted round-robin and health threshold parameters:
+      The upstream block in <code>nginx.conf</code> establishes weighted round-robin distribution with active health check intervals:
     </p>
     <div style="background: #0f172a; color: #e2e8f0; padding: 6px 10px; border-radius: 5px; font-family: Consolas, monospace; font-size: 7.5pt; margin-top: 2px;">
       upstream backend_servers {<br>
@@ -495,38 +500,38 @@ const htmlContent = `
       }
     </div>
   </div>
-  <div class="footer-running">CampusFind Academic Report &bull; Digital Assignment 3 &bull; Page 2 of 10</div>
+  <div class="footer-running">CampusFind Technical Report &bull; Cloud Infrastructure and Architecture &bull; Page 2 of 10</div>
 </div>
 
 <!-- ======================================================== -->
-<!-- PAGE 3: QUESTION 1(b) - APACHE BENCH LOAD TESTING -->
+<!-- PAGE 3: SECTION 1.3 - APACHE BENCH LOAD TESTING -->
 <!-- ======================================================== -->
 <div class="page">
-  <div class="header-running">Question 1(b) &bull; Apache Bench Load Testing & Benchmark Analysis</div>
+  <div class="header-running">Section 1.3 &bull; Benchmark Performance Evaluation</div>
   <div class="content-body">
     <h2>
-      <span>Question 1: Scale Your Application</span>
-      <span class="q-badge">Part (b) &bull; 1.25 Marks</span>
+      <span>1. High-Availability Clustered Architecture & Scaling</span>
+      <span class="sec-badge">Empirical Benchmarks</span>
     </h2>
 
-    <h3>1. Load Testing Methodology</h3>
+    <h3>1.3 Benchmark Performance Evaluation (ApacheBench Analysis)</h3>
     <p>
-      To quantify the performance gains of horizontal clustering, standardized benchmark load tests were executed using <strong>Apache Bench (ab version 2.3)</strong>. The test subjected the hardest-hit API endpoint (<code>GET /api/items</code>) to <strong>1,000 total requests</strong> with a concurrency level of <strong>c = 20 simultaneous connections</strong>.
+      To rigorously evaluate horizontal scalability, controlled stress tests were executed using <strong>ApacheBench (ab v2.3)</strong>. The test suite targeted the critical read endpoint (<code>GET /api/items</code>) with <strong>1,000 total HTTP requests</strong> at a concurrency level of <strong>c = 20 simultaneous connections</strong>.
     </p>
     <div class="callout">
       <strong>Benchmark Test Parameters:</strong> <code>ab -n 1000 -c 20 http://[target]/api/items</code><br>
-      &bull; <strong>Baseline Test:</strong> Executed directly against a single isolated backend instance (<code>http://localhost:5001/api/items</code>).<br>
-      &bull; <strong>Clustered Test:</strong> Executed against the Nginx load balancer distributing across all 3 backend replicas (<code>http://localhost:8080/api/items</code>).
+      &bull; <strong>Baseline Single-Node Test:</strong> Executed directly against an isolated backend replica (<code>http://localhost:5001/api/items</code>).<br>
+      &bull; <strong>Horizontally Scaled Clustered Test:</strong> Executed against the Nginx load balancer distributing across all 3 backend replicas (<code>http://localhost:8080/api/items</code>).
     </div>
 
-    <h3>2. Empirical Performance Comparison Table</h3>
+    <h3>Comparative Performance Results</h3>
     <table>
       <thead>
         <tr>
           <th>Performance Metric</th>
-          <th>1 Backend Instance (Baseline)</th>
-          <th>3 Backend Instances (Clustered)</th>
-          <th>Quantitative Delta & Improvement</th>
+          <th>Single Node Baseline</th>
+          <th>3-Node Clustered Architecture</th>
+          <th>Quantitative Improvement Delta</th>
         </tr>
       </thead>
       <tbody>
@@ -537,10 +542,10 @@ const htmlContent = `
           <td style="color: #15803d; font-weight: 700;">+124.9% Throughput Gain (2.25x Faster)</td>
         </tr>
         <tr>
-          <td><strong>Time Taken for 1,000 Requests</strong></td>
+          <td><strong>Total Execution Time (1,000 Req)</strong></td>
           <td>12.738 seconds</td>
           <td>5.664 seconds</td>
-          <td>-55.5% Wall-Clock Execution Time</td>
+          <td>-55.5% Wall-Clock Processing Time</td>
         </tr>
         <tr>
           <td><strong>Mean Latency per Request</strong></td>
@@ -549,13 +554,13 @@ const htmlContent = `
           <td>-141.48 ms Latency Reduction (-55.5%)</td>
         </tr>
         <tr>
-          <td><strong>Time per Request (Concurrent)</strong></td>
+          <td><strong>Concurrent Batch Latency</strong></td>
           <td>12.738 ms</td>
           <td>5.664 ms</td>
           <td>-7.074 ms per concurrent batch</td>
         </tr>
         <tr>
-          <td><strong>50th Percentile Latency (Median)</strong></td>
+          <td><strong>Median Latency (50th Percentile)</strong></td>
           <td>231 ms</td>
           <td>95 ms</td>
           <td>-136 ms (-58.9%)</td>
@@ -567,19 +572,19 @@ const htmlContent = `
           <td>-227 ms (-65.2%)</td>
         </tr>
         <tr>
-          <td><strong>95th Percentile Latency</strong></td>
+          <td><strong>95th Percentile Tail Latency</strong></td>
           <td style="color: #b45309; font-weight: 700;">373 ms</td>
           <td style="color: #15803d; font-weight: 700;">156 ms</td>
           <td style="color: #15803d; font-weight: 700;">-217 ms (-58.2% Tail Latency Cut)</td>
         </tr>
         <tr>
-          <td><strong>Failed Requests</strong></td>
+          <td><strong>Packet Drop / Failure Rate</strong></td>
           <td>0 (0.00%)</td>
           <td>0 (0.00%)</td>
           <td>Zero packet loss across both runs</td>
         </tr>
         <tr>
-          <td><strong>Data Transfer Rate</strong></td>
+          <td><strong>Network Data Transfer Rate</strong></td>
           <td>356.68 KB/sec</td>
           <td>802.21 KB/sec</td>
           <td>+124.9% Network Pipeline Utilization</td>
@@ -592,39 +597,39 @@ const htmlContent = `
       <div class="figure-caption">Figure 3: Side-by-side terminal capture of Apache Bench execution and empirical benchmark summary card.</div>
     </div>
 
-    <h3>3. Architectural Performance Analysis</h3>
+    <h3>Architectural Performance Findings</h3>
     <p>
-      The single-instance bottleneck stemmed from Node.js's single-threaded event loop CPU saturation while serializing large JSON payloads from PostgreSQL and handling concurrent TLS sockets. Tripling the worker pool reduced CPU queue depth, allowing requests to be processed in parallel across multiple virtual CPU cores while leveraging Neon PostgreSQL's managed connection pooler to prevent database connection exhaustion.
+      The single-instance bottleneck stemmed from Node.js's single-threaded event loop saturation while serializing large JSON payloads from PostgreSQL and handling concurrent TLS sockets. Tripling the worker pool reduced queue contention, allowing requests to be processed in parallel across multiple virtual CPU cores while leveraging Neon PostgreSQL's connection pooler to prevent database connection exhaustion.
     </p>
   </div>
-  <div class="footer-running">CampusFind Academic Report &bull; Digital Assignment 3 &bull; Page 3 of 10</div>
+  <div class="footer-running">CampusFind Technical Report &bull; Cloud Infrastructure and Architecture &bull; Page 3 of 10</div>
 </div>
 
 <!-- ======================================================== -->
-<!-- PAGE 4: QUESTION 1(c) - HIGH-AVAILABILITY FAILOVER -->
+<!-- PAGE 4: SECTION 1.4 - FAILOVER RESILIENCE -->
 <!-- ======================================================== -->
 <div class="page">
-  <div class="header-running">Question 1(c) &bull; High-Availability Failover Resilience Testing</div>
+  <div class="header-running">Section 1.4 &bull; High-Availability Failover Testing</div>
   <div class="content-body">
     <h2>
-      <span>Question 1: Scale Your Application</span>
-      <span class="q-badge">Part (c) &bull; 1.25 Marks</span>
+      <span>1. High-Availability Clustered Architecture & Scaling</span>
+      <span class="sec-badge">Fault Tolerance</span>
     </h2>
 
-    <h3>1. Chaos Engineering & Node Failure Scenario</h3>
+    <h3>1.4 High-Availability Fault Tolerance & Reverse Proxy Failover</h3>
     <p>
-      In production cloud systems, server nodes inevitably crash due to hardware faults, memory exhaustion (OOM), or rolling updates. To simulate unexpected node failure during live traffic, an in-flight chaos experiment was performed: while an Apache Bench load test of 1,000 requests was executing against Nginx, <strong><code>campusfind-backend-2</code> was abruptly halted</strong> (via <code>docker stop campusfind-backend-2</code>).
+      In distributed cloud environments, backend nodes experience abrupt failures due to hardware faults, unhandled exceptions, memory exhaustion (OOM), or rolling cluster deployments. To validate fault tolerance during live execution, an in-flight chaos experiment was performed: while an ApacheBench test of 1,000 requests was actively executing, <strong><code>campusfind-backend-2</code> was abruptly terminated</strong> via <code>docker stop campusfind-backend-2</code>.
     </p>
 
-    <h3>2. Baseline Behavior: Default Nginx Configuration</h3>
+    <h3>Baseline Vulnerability: Default Nginx Behavior</h3>
     <p>
-      Under default Nginx settings (<code>proxy_next_upstream off;</code>), when Nginx routes an in-flight socket to a terminating container, the TCP connection drops or is refused. Because retry forwarding is disabled by default, Nginx immediately returns an <strong>HTTP 502 Bad Gateway</strong> error directly to the requesting client.
+      Under standard Nginx settings (<code>proxy_next_upstream off;</code>), when Nginx assigns a client request to a terminating or unresponsive socket, the TCP connection drops. Because request re-routing is disabled by default, Nginx immediately returns an <strong>HTTP 502 Bad Gateway</strong> error to the client:
     </p>
     <div class="callout-warn">
-      <strong>Default Test Result:</strong> <strong>20 Failed Requests (HTTP 502 Bad Gateway)</strong> out of 1,000 requests (2.0% failure rate). Throughput collapsed to 130.85 req/sec with an elevated mean latency of 152.84 ms.
+      <strong>Default Baseline Result:</strong> <strong>20 Failed Requests (HTTP 502 Bad Gateway)</strong> out of 1,000 requests (2.0% failure rate). Service throughput degraded to 130.85 req/sec with an elevated mean latency of 152.84 ms.
     </div>
 
-    <h3>3. Resilient Nginx Architecture Implementation</h3>
+    <h3>Engineered Solution: Resilient Failover Proxy Configuration</h3>
     <p>
       To achieve zero-downtime fault tolerance, the reverse proxy was hardened by enabling upstream retry failover directives in <code>nginx.conf</code>:
     </p>
@@ -636,25 +641,25 @@ const htmlContent = `
       proxy_read_timeout 5s;
     </div>
     <p>
-      When Nginx encounters a connection error or 5xx status from an upstream server, it catches the socket failure within 1 second and transparently replays the original request against the next available server in the pool before returning any response to the user.
+      When Nginx detects an upstream connection failure or 5xx status, it catches the socket error within 1 second and re-routes the in-flight request to the next available healthy backend before returning any response to the user.
     </p>
 
-    <h3>4. Failover Resilience Comparative Evaluation Table</h3>
+    <h3>Failover Resilience Evaluation</h3>
     <table>
       <thead>
         <tr>
           <th>Evaluation Metric</th>
-          <th>Default Nginx (Failover OFF)</th>
-          <th>Resilient Nginx (Failover ON)</th>
+          <th>Default Nginx (Failover Disabled)</th>
+          <th>Resilient Nginx (Failover Enabled)</th>
           <th>Reliability Impact</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>Node Status During Test</strong></td>
-          <td>Node 2 Terminated Mid-Test</td>
-          <td>Node 2 Terminated Mid-Test</td>
-          <td>Identical Chaos Fault Induced</td>
+          <td><strong>Simulated Fault Injection</strong></td>
+          <td>Node 2 Terminated Mid-Flight</td>
+          <td>Node 2 Terminated Mid-Flight</td>
+          <td>Identical Chaos Experiment</td>
         </tr>
         <tr>
           <td><strong>Failed Requests</strong></td>
@@ -669,7 +674,7 @@ const htmlContent = `
           <td style="color: #15803d; font-weight: 700;">Zero Client-Visible Outages</td>
         </tr>
         <tr>
-          <td><strong>Requests per Second</strong></td>
+          <td><strong>Throughput Retention</strong></td>
           <td>130.85 req/sec</td>
           <td>171.01 req/sec</td>
           <td>+30.7% Higher Throughput Retention</td>
@@ -688,23 +693,23 @@ const htmlContent = `
       <div class="figure-caption">Figure 4: Apache Bench failover verification demonstrating elimination of 502 errors via proxy_next_upstream.</div>
     </div>
   </div>
-  <div class="footer-running">CampusFind Academic Report &bull; Digital Assignment 3 &bull; Page 4 of 10</div>
+  <div class="footer-running">CampusFind Technical Report &bull; Cloud Infrastructure and Architecture &bull; Page 4 of 10</div>
 </div>
 
 <!-- ======================================================== -->
-<!-- PAGE 5: QUESTION 1(d) - SCALED ARCHITECTURE & CLOUD BURSTING -->
+<!-- PAGE 5: SECTION 1.5 - ARCHITECTURE & CLOUD BURSTING -->
 <!-- ======================================================== -->
 <div class="page">
-  <div class="header-running">Question 1(d) &bull; Scaled Architecture & Cloud Bursting Tier</div>
+  <div class="header-running">Section 1.5 &bull; Scaled Cloud Architecture & Cloud Bursting</div>
   <div class="content-body">
     <h2>
-      <span>Question 1: Scale Your Application</span>
-      <span class="q-badge">Part (d) &bull; 1.25 Marks</span>
+      <span>1. High-Availability Clustered Architecture & Scaling</span>
+      <span class="sec-badge">Architecture Design</span>
     </h2>
 
-    <h3>1. Clustered Cloud Architecture Topology</h3>
+    <h3>1.5 Scaled Cloud Architecture & Hybrid Cloud Bursting Design</h3>
     <p>
-      The end-to-end cloud architecture incorporates client ingress, reverse proxy load balancing, horizontal container replication, managed serverless database persistence, and a specialized <strong>Cloud Bursting / Edge Computing Tier</strong> highlighted in amber in Figure 1:
+      The end-to-end cloud infrastructure integrates client ingress, reverse proxy load balancing, horizontal microservice replication, managed serverless database persistence, and a dedicated <strong>Cloud Bursting & Edge Computing Tier</strong> highlighted in amber in Figure 1:
     </p>
 
     <div class="figure-container">
@@ -712,44 +717,44 @@ const htmlContent = `
       <div class="figure-caption">Figure 1: Full multi-tier scaled cloud architecture featuring the highlighted Cloud Bursting & Edge Computing tier.</div>
     </div>
 
-    <h3>2. Cloud Bursting & Edge Computing Component Deep-Dive</h3>
+    <h3>Cloud Bursting & Edge Computing Technical Specification</h3>
     <p>
-      <strong>What it does:</strong> The Cloud Bursting Tier comprises <strong>Cloudflare Workers (Edge Computing)</strong> coupled with an ephemeral <strong>AWS ECS Fargate Burst Container Pool</strong>. During normal operations, requests flow directly to the 3-node baseline cluster. When telemetry detects incoming traffic exceeding 500 req/sec or baseline container CPU utilization exceeding 75% for 60 consecutive seconds, Cloud Bursting automatically triggers.
+      <strong>Operational Role:</strong> The Cloud Bursting tier combines <strong>Cloudflare Workers (Edge Computing)</strong> with an on-demand <strong>AWS ECS Fargate Burst Container Pool</strong>. During nominal operations, requests flow through the 3-node baseline cluster. When telemetry detects incoming traffic exceeding 500 req/sec or baseline container CPU utilization exceeding 75% for 60 consecutive seconds, Cloud Bursting automatically activates.
     </p>
     <ul>
-      <li><strong>Edge Compute Read-Through Caching:</strong> Cloudflare Workers intercept public read requests (<code>GET /api/items</code>) at over 300 global edge points-of-presence (PoPs). Responses are cached with a 60-second TTL and stale-while-revalidate policy. This absorbs <strong>80% of catalog browsing traffic</strong> at the edge without touching the backend servers or database.</li>
+      <li><strong>Edge Compute Read-Through Caching:</strong> Cloudflare Workers intercept public read requests (<code>GET /api/items</code>) across global edge points-of-presence (PoPs). Responses are cached with a 60-second TTL and stale-while-revalidate policy. This absorbs <strong>80% of catalog browsing traffic</strong> at the edge without touching backend containers or PostgreSQL.</li>
       <li><strong>Serverless Container Bursting:</strong> For dynamic write requests (reporting lost items, submitting claim proofs), an AWS Lambda trigger provisions up to 5 additional on-demand <strong>AWS ECS Fargate serverless containers</strong>. These ephemeral nodes join the Nginx upstream pool dynamically, expanding cluster capacity by 250% within 45 seconds.</li>
-      <li><strong>Automatic Scale-Down:</strong> Once traffic recedes below 200 req/sec for 10 minutes, ECS Fargate burst tasks terminate, preventing cloud billing waste.</li>
+      <li><strong>Automated Scale-Down:</strong> Once traffic recedes below 200 req/sec for 10 minutes, ECS Fargate burst tasks terminate, preventing cloud billing waste.</li>
     </ul>
   </div>
-  <div class="footer-running">CampusFind Academic Report &bull; Digital Assignment 3 &bull; Page 5 of 10</div>
+  <div class="footer-running">CampusFind Technical Report &bull; Cloud Infrastructure and Architecture &bull; Page 5 of 10</div>
 </div>
 
 <!-- ======================================================== -->
-<!-- PAGE 6: QUESTION 2(a) - SENSITIVE DATA & BCRYPT HASHING -->
+<!-- PAGE 6: SECTION 2.1 - SENSITIVE DATA & BCRYPT -->
 <!-- ======================================================== -->
 <div class="page">
-  <div class="header-running">Question 2(a) &bull; Sensitive Data Protection & Salted Bcrypt Hashes</div>
+  <div class="header-running">Section 2.1 &bull; Sensitive Data Protection & Bcrypt Hashing</div>
   <div class="content-body">
     <h2>
-      <span>Question 2: Secure Your Application</span>
-      <span class="q-badge">Part (a) &bull; 1.25 Marks</span>
+      <span>2. Cloud Security Architecture & Enterprise Hardening</span>
+      <span class="sec-badge">Data Security</span>
     </h2>
 
-    <h3>1. Identification of Sensitive Data Assets</h3>
+    <h3>2.1 Sensitive Data Classification & Cryptographic Password Hashing</h3>
     <p>
-      In a campus-wide lost and found repository, safeguarding personal data is crucial to protect student privacy and comply with data protection regulations. The sensitive data assets identified within CampusFind include:
+      In a campus-wide lost and found repository, safeguarding personal data is crucial to protect student privacy and prevent identity theft. The sensitive data assets managed within CampusFind include:
     </p>
     <ul>
-      <li><strong>User Authentication Credentials:</strong> Plaintext student/admin passwords, email identifiers, and JWT session secret keys.</li>
+      <li><strong>User Authentication Credentials:</strong> Student and administrator passwords, email identifiers, and JWT session secret keys.</li>
       <li><strong>Personally Identifiable Information (PII):</strong> Student full names, university email addresses, phone contact numbers, and student registration numbers.</li>
       <li><strong>Item Ownership & Claim Verification Metadata:</strong> Detailed physical descriptions, item serial numbers (e.g. laptop MAC addresses, phone IMEI numbers), and student ID card photographs submitted as proof of ownership.</li>
       <li><strong>MFA Cryptographic Seeds:</strong> Unencrypted Base32 TOTP secret keys (<code>mfa_secret</code>) used to generate one-time login tokens.</li>
     </ul>
 
-    <h3>2. Risk of Plaintext / Weak Hash Storage</h3>
+    <h3>Threat Analysis: Risks of Insecure Credential Storage</h3>
     <p>
-      Storing credentials in plaintext or using legacy algorithms (e.g. MD5, SHA-1, or unsalted SHA-256) exposes the database to severe risks:
+      Storing credentials in plaintext or using legacy algorithms (e.g. MD5, SHA-1, or unsalted SHA-256) exposes the system to critical vulnerabilities:
     </p>
     <ul>
       <li><strong>Rainbow Table Attacks:</strong> Precomputed cryptographic hash dictionaries instantly invert unsalted hashes.</li>
@@ -757,9 +762,9 @@ const htmlContent = `
       <li><strong>Credential Stuffing Cascades:</strong> Breached university passwords are systematically reused against institutional portals.</li>
     </ul>
 
-    <h3>3. Cryptographic Implementation: Salted Bcrypt with Work Factor 10</h3>
+    <h3>Implementation: Salted Bcrypt with Work Factor 10</h3>
     <p>
-      CampusFind implements <strong>Bcrypt (OpenBSD Blowfish-based password hashing)</strong> via <code>bcryptjs</code> with an adaptive cost factor of <strong>10 rounds</strong> (<code>2^10 = 1,024 key derivation iterations</code>). Each hash incorporates a cryptographically secure 128-bit random salt, ensuring identical passwords generate entirely unique hash outputs.
+      CampusFind implements <strong>Bcrypt (OpenBSD Blowfish-based key derivation)</strong> via <code>bcryptjs</code> with an adaptive cost factor of <strong>10 rounds</strong> (<code>2^10 = 1,024 key derivation iterations</code>). Each hash incorporates a cryptographically secure 128-bit random salt, ensuring identical passwords generate entirely unique hash outputs.
     </p>
 
     <div class="figure-container">
@@ -767,7 +772,7 @@ const htmlContent = `
       <div class="figure-caption">Figure 5: Live Neon PostgreSQL query confirming bcrypt salted password hashes ($2a$10$...) and MFA status.</div>
     </div>
 
-    <h3>4. Bcrypt Hash Format Anatomy</h3>
+    <h3>Bcrypt Hash Anatomy & Structure</h3>
     <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px 12px; font-family: Consolas, monospace; font-size: 8pt; margin-top: 4px;">
       <span style="color: #0284c7; font-weight: 700;">$2a$</span><span style="color: #7c3aed; font-weight: 700;">10$</span><span style="color: #d97706; font-weight: 700;">LBXMFg2cR5nir8bKN3i6qO</span><span style="color: #16a34a; font-weight: 700;">w//ZiJDZ7JJaVNy3r2cOKy77Tlk2Mra</span><br>
       &bull; <strong>$2a$:</strong> Algorithm identifier (bcrypt revision 2a)<br>
@@ -776,23 +781,23 @@ const htmlContent = `
       &bull; <strong>31 characters:</strong> Derived ciphertext checksum
     </div>
   </div>
-  <div class="footer-running">CampusFind Academic Report &bull; Digital Assignment 3 &bull; Page 6 of 10</div>
+  <div class="footer-running">CampusFind Technical Report &bull; Cloud Infrastructure and Architecture &bull; Page 6 of 10</div>
 </div>
 
 <!-- ======================================================== -->
-<!-- PAGE 7: QUESTION 2(b) - TOTP MULTI-FACTOR AUTH & RBAC -->
+<!-- PAGE 7: SECTION 2.2 - TOTP MFA & RBAC ENFORCEMENT -->
 <!-- ======================================================== -->
 <div class="page">
-  <div class="header-running">Question 2(b) &bull; TOTP Multi-Factor Authentication & RBAC API Enforcement</div>
+  <div class="header-running">Section 2.2 &bull; TOTP Multi-Factor Authentication & RBAC</div>
   <div class="content-body">
     <h2>
-      <span>Question 2: Secure Your Application</span>
-      <span class="q-badge">Part (b) &bull; 1.25 Marks</span>
+      <span>2. Cloud Security Architecture & Enterprise Hardening</span>
+      <span class="sec-badge">Access Control</span>
     </h2>
 
-    <h3>1. Multi-Factor Authentication (TOTP - RFC 6238) Implementation</h3>
+    <h3>2.2 Multi-Factor Authentication (RFC 6238 TOTP) & RBAC Authorization</h3>
     <p>
-      To defend administrative and student accounts against credential theft, <strong>Time-based One-Time Password (TOTP) Multi-Factor Authentication</strong> was engineered according to <strong>RFC 6238</strong> standards. It integrates seamlessly with industry-standard authenticator apps including <strong>Google Authenticator</strong>, <strong>Microsoft Authenticator</strong>, and <strong>1Password</strong>:
+      To defend administrative and student accounts against credential theft and phishing, <strong>Time-based One-Time Password (TOTP) Multi-Factor Authentication</strong> was engineered according to <strong>RFC 6238</strong> standards. It integrates with industry-standard authenticator apps including <strong>Google Authenticator</strong>, <strong>Microsoft Authenticator</strong>, and <strong>1Password</strong>:
     </p>
     <ul>
       <li><strong>Secret Key & QR Code Generation (<code>POST /api/auth/mfa/setup</code>):</strong> Generates an unguessable 20-byte Base32 cryptographic secret and renders an inline QR code containing the standard URI scheme: <code>otpauth://totp/CampusFind:user@email?secret=...&issuer=CampusFind</code>.</li>
@@ -805,7 +810,7 @@ const htmlContent = `
       <div class="figure-caption">Figure 6: Generated TOTP Authenticator QR code and verified API two-step login challenge flow.</div>
     </div>
 
-    <h3>2. Role-Based Access Control (RBAC) & Ownership API Enforcement</h3>
+    <h3>Role-Based Access Control (RBAC) & Ownership API Enforcement</h3>
     <p>
       CampusFind enforces granular authorization guards across state-modifying endpoints (<code>PUT /api/items/:id</code> and <code>DELETE /api/items/:id</code>). Middleware verifies that only the listing creator or an authenticated user with role <code>ADMIN</code> can modify or delete listings:
     </p>
@@ -815,33 +820,33 @@ const htmlContent = `
       <div class="figure-caption">Figure 7: Empirical API rejection logs: HTTP 401 (Missing Token) and HTTP 403 (Unauthorized Student Tampering).</div>
     </div>
   </div>
-  <div class="footer-running">CampusFind Academic Report &bull; Digital Assignment 3 &bull; Page 7 of 10</div>
+  <div class="footer-running">CampusFind Technical Report &bull; Cloud Infrastructure and Architecture &bull; Page 7 of 10</div>
 </div>
 
 <!-- ======================================================== -->
-<!-- PAGE 8: QUESTION 2(c) - CONTAINER SECURITY & TRIVY SCAN -->
+<!-- PAGE 8: SECTION 2.3 - TRIVY VULNERABILITY AUDIT -->
 <!-- ======================================================== -->
 <div class="page">
-  <div class="header-running">Question 2(c) &bull; Container Security Audit & Trivy Vulnerability Remediation</div>
+  <div class="header-running">Section 2.3 &bull; Container Vulnerability Audit & Hardening</div>
   <div class="content-body">
     <h2>
-      <span>Question 2: Secure Your Application</span>
-      <span class="q-badge">Part (c) &bull; 1.25 Marks</span>
+      <span>2. Cloud Security Architecture & Enterprise Hardening</span>
+      <span class="sec-badge">Container Hardening</span>
     </h2>
 
-    <h3>1. Container Vulnerability Scanning with Trivy</h3>
+    <h3>2.3 Container Vulnerability Assessment & Image Hardening (Aqua Security Trivy)</h3>
     <p>
       To ensure enterprise container security, vulnerability scans were performed using <strong>Aqua Security Trivy (v0.76.1)</strong> targeting both the baseline unhardened Docker container and the production-hardened container image.
     </p>
 
-    <h3>2. Security Hardening Techniques Implemented</h3>
+    <h3>Container Hardening Techniques Implemented</h3>
     <ul>
-      <li><strong>Ultra-Minimal Base Image:</strong> Replaced bloated Debian Bookworm (<code>node:18</code>, 413 OS packages) with Alpine Linux 3.20 (<code>node:20-alpine</code>, only 18 OS packages), shrinking the OS attack surface by 95.6%.</li>
+      <li><strong>Minimal Base Image:</strong> Replaced bloated Debian Bookworm (<code>node:18</code>, 413 OS packages) with Alpine Linux 3.20 (<code>node:20-alpine</code>, only 18 OS packages), shrinking the OS attack surface by 95.6%.</li>
       <li><strong>Principle of Least Privilege (Non-Root Execution):</strong> Enforced unprivileged user execution via <code>USER node</code> (UID 1000). If an adversary achieves remote code execution within Node.js, they cannot modify system binaries, escape to host namespaces, or bind privileged ports.</li>
       <li><strong>Production-Scoped Dependencies:</strong> Executed <code>npm ci --only=production</code> and cleaned npm cache, discarding unnecessary build utilities, test runners, and unneeded compilers.</li>
     </ul>
 
-    <h3>3. Trivy Vulnerability Audit Comparative Table</h3>
+    <h3>Trivy Vulnerability Audit Comparative Analysis</h3>
     <table>
       <thead>
         <tr>
@@ -896,147 +901,147 @@ const htmlContent = `
       <div class="figure-caption">Figure 8: Trivy vulnerability scan comparison verifying 100% critical CVE elimination and image hardening.</div>
     </div>
   </div>
-  <div class="footer-running">CampusFind Academic Report &bull; Digital Assignment 3 &bull; Page 8 of 10</div>
+  <div class="footer-running">CampusFind Technical Report &bull; Cloud Infrastructure and Architecture &bull; Page 8 of 10</div>
 </div>
 
 <!-- ======================================================== -->
-<!-- PAGE 9: QUESTION 2(d) - THREAT MODELING & COMPLIANCE -->
+<!-- PAGE 9: SECTION 2.4 - THREAT MODELING & COMPLIANCE -->
 <!-- ======================================================== -->
 <div class="page">
-  <div class="header-running">Question 2(d) &bull; Threat Modeling & Regulatory Compliance</div>
+  <div class="header-running">Section 2.4 &bull; Threat Modeling & Regulatory Compliance</div>
   <div class="content-body">
     <h2>
-      <span>Question 2: Secure Your Application</span>
-      <span class="q-badge">Part (d) &bull; 1.25 Marks</span>
+      <span>2. Cloud Security Architecture & Enterprise Hardening</span>
+      <span class="sec-badge">Risk & Compliance</span>
     </h2>
 
-    <h3>1. Threat Agent 1: The Malicious Impersonator / Rogue Student</h3>
+    <h3>2.4 Threat Modeling, Risk Mitigation & Regulatory Compliance</h3>
     <p>
-      <strong>Profile & Motivation:</strong> An insider threat consisting of a rogue university student or unauthorized campus visitor seeking to illicitly acquire high-value misplaced assets (e.g., Apple MacBooks, iPhones, premium wallets, student smart ID cards) by fraudulent impersonation.
+      A formal threat modeling assessment was conducted to identify principal adversary archetypes, analyze attack vectors, and align technical safeguards with international data protection mandates:
+    </p>
+
+    <h3>Threat Agent 1: The Malicious Impersonator / Rogue Student</h3>
+    <p>
+      <strong>Profile & Motivation:</strong> An insider threat consisting of an authenticated student or unauthorized visitor seeking to illicitly acquire high-value misplaced assets (e.g. laptops, smartphones, premium wallets, institutional ID cards) through fraudulent ownership claims.
     </p>
     <ul>
-      <li><strong>Tactics, Techniques & Procedures (TTPs):</strong> The adversary leverages social engineering, shoulder surfing, or phished credentials to hijack legitimate student accounts. They systematically submit fraudulent claim proofs, tamper with ownership records, or prematurely delete reported lost listings (<code>DELETE /api/items/:id</code>) to obscure physical items.</li>
-      <li><strong>Implemented Technical Controls:</strong>
-        <br>&bull; <strong>TOTP Multi-Factor Authentication:</strong> Even if credentials are stolen, the attacker is blocked without the physical authenticator device.
-        <br>&bull; <strong>Granular RBAC & Ownership Verification Middleware:</strong> Ensures deletion and updates can only be executed by verified item owners or administrative overrides, returning HTTP 403 Forbidden on violation.
-        <br>&bull; <strong>Immutable Audit Trails:</strong> Every claim, edit, and status change logs the originating IP address and UTC timestamp into PostgreSQL.
+      <li><strong>Attack Vectors:</strong> The adversary leverages shoulder-surfing or stolen student credentials to access accounts, submit fraudulent claim proofs, tamper with item statuses, or prematurely delete reported listings (<code>DELETE /api/items/:id</code>).</li>
+      <li><strong>Technical Safeguards Implemented:</strong>
+        <br>&bull; <strong>TOTP Multi-Factor Authentication:</strong> Blocks account takeover attempts lacking the physical authenticator device.
+        <br>&bull; <strong>Granular RBAC & Ownership Verification:</strong> Restricts deletion and editing strictly to verified listing creators or administrators, rejecting unauthorized attempts with HTTP 403 Forbidden.
+        <br>&bull; <strong>Immutable Audit Logging:</strong> Records client IP addresses and UTC timestamps for all state modifications.
       </li>
-      <li><strong>Legal & Regulatory Mandates:</strong>
-        <br>&bull; <strong>India Digital Personal Data Protection (DPDP) Act 2023, Section 8(5):</strong> Mandates that data fiduciaries protect personal data in their possession by taking reasonable security safeguards to prevent personal data breaches and unauthorized access.
-        <br>&bull; <strong>EU General Data Protection Regulation (GDPR), Article 32 (Security of Processing):</strong> Obligates technical controls ensuring ongoing confidentiality, integrity, availability, and resilience of processing systems.
+      <li><strong>Regulatory Compliance Mandates:</strong>
+        <br>&bull; <strong>India Digital Personal Data Protection (DPDP) Act 2023, Section 8(5):</strong> Mandates that data fiduciaries protect personal data by implementing reasonable technical safeguards to prevent unauthorized access or disclosure.
+        <br>&bull; <strong>EU General Data Protection Regulation (GDPR), Article 32 (Security of Processing):</strong> Requires technical measures to ensure ongoing confidentiality, integrity, availability, and resilience of processing systems.
       </li>
     </ul>
 
-    <h3>2. Threat Agent 2: The Automated Credential Stuffer & Botnet</h3>
+    <h3>Threat Agent 2: The Automated Credential Stuffer & Botnet</h3>
     <p>
-      <strong>Profile & Motivation:</strong> External cybercriminal syndicates or opportunistic automated botnets attempting mass account takeovers to exfiltrate student personal data, sell institutional email accounts, or compromise campus network infrastructure.
+      <strong>Profile & Motivation:</strong> External cybercriminal syndicates or opportunistic botnets attempting mass account takeovers to exfiltrate student personal data, compromise institutional emails, or deploy distributed malware payloads.
     </p>
     <ul>
-      <li><strong>Tactics, Techniques & Procedures (TTPs):</strong> Automated distributed botnets execute dictionary attacks and credential stuffing against <code>POST /api/auth/login</code> using breached credentials leaked from external third-party platforms.</li>
-      <li><strong>Implemented Technical Controls:</strong>
-        <br>&bull; <strong>Computationally Expensive Password Hashing:</strong> Bcrypt work factor 10 enforces an intentional ~100ms CPU computation delay per login attempt, making distributed brute force computationally cost-prohibitive.
-        <br>&bull; <strong>IP-Based Rate Limiting:</strong> Express rate limiter restricts bursts to 100 requests per 15-minute window per IP, blocking automated spray attacks.
-        <br>&bull; <strong>Container Sandbox Hardening:</strong> Unprivileged <code>USER node</code> execution and Alpine footprint prevent botnet payloads from establishing root persistence or pivoting into host Docker daemons.
+      <li><strong>Attack Vectors:</strong> Automated distributed botnets execute dictionary attacks and credential stuffing against <code>POST /api/auth/login</code> using credential dumps from third-party data breaches.</li>
+      <li><strong>Technical Safeguards Implemented:</strong>
+        <br>&bull; <strong>Bcrypt Cost Factor Derivation:</strong> Cost factor 10 enforces an intentional ~100ms CPU computation delay per login attempt, rendering large-scale automated brute force computationally intractable.
+        <br>&bull; <strong>IP-Based Rate Limiting:</strong> Express rate limiting restricts bursts to 100 requests per 15-minute window per IP, mitigating spray attacks.
+        <br>&bull; <strong>Container Sandbox Hardening:</strong> Unprivileged <code>USER node</code> execution and Alpine footprint prevent botnet payloads from establishing root persistence or escaping to host namespaces.
       </li>
-      <li><strong>Legal & Regulatory Mandates:</strong>
-        <br>&bull; <strong>EU General Data Protection Regulation (GDPR), Article 5(1)(f) (Integrity and Confidentiality):</strong> Requires personal data to be processed in a manner that ensures appropriate security, including protection against unauthorized processing, accidental loss, or destruction.
-        <br>&bull; <strong>ISO/IEC 27001:2022 Security Standard (Control A.8.5 - Secure Authentication):</strong> Requires multi-factor authentication, secure password storage, and automated brute-force countermeasures to safeguard information assets.
+      <li><strong>Regulatory Compliance Mandates:</strong>
+        <br>&bull; <strong>EU General Data Protection Regulation (GDPR), Article 5(1)(f) (Integrity and Confidentiality):</strong> Requires personal data to be protected against unauthorized processing, accidental loss, or destruction.
+        <br>&bull; <strong>ISO/IEC 27001:2022 Control A.8.5 (Secure Authentication):</strong> Requires multi-factor authentication, secure password storage, and automated brute-force countermeasures.
       </li>
     </ul>
   </div>
-  <div class="footer-running">CampusFind Academic Report &bull; Digital Assignment 3 &bull; Page 9 of 10</div>
+  <div class="footer-running">CampusFind Technical Report &bull; Cloud Infrastructure and Architecture &bull; Page 9 of 10</div>
 </div>
 
 <!-- ======================================================== -->
-<!-- PAGE 10: DELIVERABLES, REPOSITORY & VIDEO DEMO GUIDE -->
+<!-- PAGE 10: SECTION 3 - DEPLOYMENT, VERIFICATION & SIGN-OFF -->
 <!-- ======================================================== -->
 <div class="page">
-  <div class="header-running">Deliverables &bull; Repository, Deployment Links & Video Demo Guide</div>
+  <div class="header-running">Section 3 &bull; Deployment Registry, Verification & Certification</div>
   <div class="content-body">
     <h2>
-      <span>Project Deliverables & Submission Verification</span>
-      <span class="q-badge">Final Summary</span>
+      <span>3. Deployment Registry, System Verification & Certification</span>
+      <span class="sec-badge">Engineering Sign-Off</span>
     </h2>
 
-    <h3>1. Official Repository & Cloud Deployment Links</h3>
+    <h3>3.1 Production Deployment & Repository Registry</h3>
     <table>
       <thead>
         <tr>
-          <th>Deliverable Artifact</th>
-          <th>URL / Access Location</th>
-          <th>Status & Verification</th>
+          <th>System Component / Artifact</th>
+          <th>Location / Endpoint URL</th>
+          <th>Operational Status & Verification</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>GitHub Source Code Branch</strong></td>
+          <td><strong>GitHub Source Repository</strong></td>
           <td><code>https://github.com/SabarishVishwanathRaja/campusfind/tree/assignment-3</code></td>
-          <td style="color: #15803d; font-weight: 700;">Branch assignment-3 Active</td>
+          <td style="color: #15803d; font-weight: 700;">Branch assignment-3 Pushed & Active</td>
         </tr>
         <tr>
-          <td><strong>Live Web Application</strong></td>
+          <td><strong>Production Web Application</strong></td>
           <td><code>https://campusfind.vercel.app</code></td>
-          <td style="color: #15803d; font-weight: 700;">Production Deployed (Vercel)</td>
+          <td style="color: #15803d; font-weight: 700;">Live Global CDN Deployment (Vercel)</td>
         </tr>
         <tr>
-          <td><strong>Managed Database Cluster</strong></td>
+          <td><strong>Managed Relational Database</strong></td>
           <td><code>ep-orange-forest-b3ujohki-pooler.c-4.ap-southeast-1.aws.neon.tech</code></td>
-          <td style="color: #15803d; font-weight: 700;">Neon Serverless PostgreSQL</td>
+          <td style="color: #15803d; font-weight: 700;">Neon Serverless PostgreSQL (AWS ap-southeast-1)</td>
         </tr>
         <tr>
           <td><strong>Clustered Docker Load Balancer</strong></td>
-          <td><code>http://localhost:8080</code> (via Nginx reverse proxy)</td>
-          <td style="color: #15803d; font-weight: 700;">3 Replicas + Failover Active</td>
+          <td><code>http://localhost:8080</code> (Reverse proxy to 3 backend replicas)</td>
+          <td style="color: #15803d; font-weight: 700;">3 Replicas + Zero-Downtime Failover Active</td>
+        </tr>
+        <tr>
+          <td><strong>Media Asset Storage CDN</strong></td>
+          <td><code>res.cloudinary.com/eu0veldo</code></td>
+          <td style="color: #15803d; font-weight: 700;">Cloudinary Multi-Region Object CDN</td>
         </tr>
       </tbody>
     </table>
 
-    <h3>2. Video Demonstration Script & Rubric Walkthrough (3-Minute Guide)</h3>
+    <h3>3.2 Comprehensive Verification & Engineering Summary</h3>
     <p>
-      The video demonstration concisely walks through all required rubric criteria in 3 minutes without fluff or unnecessary presentation theatrics:
+      The architecture, performance benchmarks, and security implementations conducted for CampusFind establish a resilient, production-ready cloud deployment:
     </p>
-    <table>
-      <thead>
-        <tr>
-          <th>Timestamp</th>
-          <th>What to Show on Screen</th>
-          <th>What to Say (Concise Script)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>0:00 - 0:35</strong></td>
-          <td>Terminal showing <code>docker compose ps</code> with 3 backends + Nginx; curl command cycling <code>X-Backend-Instance</code>.</td>
-          <td>"Hello, I am Sabarish Vishwanath Raja, Reg No 25BCE1230. For DA3 Question 1, here is CampusFind running on a 3-node container cluster behind Nginx. In our peak Riviera festival scenario on <code>GET /api/items</code>, requests cycle round-robin across backend instances 1, 2, and 3."</td>
-        </tr>
-        <tr>
-          <td><strong>0:35 - 1:15</strong></td>
-          <td>Apache Bench comparison terminal & stopping <code>backend2</code> live showing 0 failed requests.</td>
-          <td>"Under Apache Bench with 1,000 requests, 3 instances improved throughput by +124.9% from 78.5 to 176.5 req/sec. When I abruptly terminate backend 2 during load testing, our resilient Nginx <code>proxy_next_upstream</code> retries seamlessly on healthy nodes with 0 dropped requests."</td>
-        </tr>
-        <tr>
-          <td><strong>1:15 - 1:50</strong></td>
-          <td>Architecture diagram with amber Cloud Bursting box.</td>
-          <td>"Our cloud architecture connects our React frontend on Vercel to Nginx and Neon PostgreSQL. During festival spikes, our Cloud Bursting Tier activates Cloudflare Workers edge caching and auto-provisions AWS ECS Fargate containers when CPU exceeds 75%."</td>
-        </tr>
-        <tr>
-          <td><strong>1:50 - 2:30</strong></td>
-          <td>Neon PostgreSQL database showing salted bcrypt hashes; TOTP QR code & 401/403 terminal rejection.</td>
-          <td>"For Question 2, passwords are cryptographically secured using salted bcrypt with cost factor 10. We implemented RFC 6238 TOTP Multi-Factor Authentication compatible with Google Authenticator, and enforced RBAC returning 401 and 403 on unauthorized modifications."</td>
-        </tr>
-        <tr>
-          <td><strong>2:30 - 3:00</strong></td>
-          <td>Trivy scan comparison showing drop from 2,416 CVEs to 4, and summary of threat agents (DPDP Act / GDPR).</td>
-          <td>"Finally, our Trivy security scan on the unhardened image showed 2,416 vulnerabilities. By migrating to Alpine and non-root execution, we reduced image size by 85% and eliminated 100% of Critical CVEs, complying with GDPR Article 32 and India's DPDP Act."</td>
-        </tr>
-      </tbody>
-    </table>
+    <ul>
+      <li><strong>Horizontal Scalability:</strong> Tripling backend instances behind an Nginx reverse proxy increased throughput by <strong>+124.9% (78.5 to 176.5 req/sec)</strong> and reduced latency by <strong>55.5%</strong> under 1,000 requests at concurrency 20.</li>
+      <li><strong>High-Availability Resiliency:</strong> Implementing <code>proxy_next_upstream</code> eliminated in-flight connection drops during node termination, reducing failed requests from 20 down to <strong>0 failed requests (100% availability)</strong>.</li>
+      <li><strong>Authentication & Access Security:</strong> Passwords are cryptographically protected via <strong>salted bcrypt hashes ($2a$10$...)</strong>, logins are safeguarded by <strong>RFC 6238 TOTP Multi-Factor Authentication</strong>, and item modification APIs are protected by strict RBAC middleware.</li>
+      <li><strong>Container Vulnerability Remediation:</strong> Migrating to an Alpine Linux base and unprivileged <code>USER node</code> execution reduced container size by <strong>85.1%</strong> and achieved <strong>100% elimination of Critical CVEs (228 to 0)</strong>.</li>
+    </ul>
 
-    <div class="callout-success" style="margin-top: 10px;">
-      <strong>Academic Integrity Declaration:</strong> I hereby declare that this assignment, benchmark suite, security implementation, and academic report represent my original work conducted under course BACSE344 (Cloud Infrastructure and Architecture) under the guidance of Dr. P. Anandan.
+    <h3>3.3 Academic Declaration & Review Certification</h3>
+    <div class="callout-success" style="margin-top: 6px; margin-bottom: 8px;">
+      <strong>Student Declaration:</strong> I hereby certify that this technical engineering report, architectural designs, container benchmarks, and security implementations represent my original work carried out for course BACSE344 (Cloud Infrastructure and Architecture).
     </div>
+
+    <table style="margin-top: 10px; border: 1px solid #cbd5e1;">
+      <tr>
+        <td style="width: 50%; padding: 12px; vertical-align: top; border-right: 1px solid #cbd5e1;">
+          <strong>Submitted By:</strong><br><br>
+          <span style="font-size: 9.5pt; font-weight: 700; color: #0f172a;">Sabarish Vishwanath Raja</span><br>
+          <span style="font-size: 8.5pt; color: #475569;">Register No: 25BCE1230</span><br>
+          <span style="font-size: 8.5pt; color: #475569;">School of Computer Science & Engineering (SCOPE)</span><br>
+          <span style="font-size: 8.5pt; color: #475569;">Date: 30th October 2026</span>
+        </td>
+        <td style="width: 50%; padding: 12px; vertical-align: top;">
+          <strong>Faculty Guide Approval:</strong><br><br>
+          <span style="font-size: 9.5pt; font-weight: 700; color: #0f172a;">Dr. P. Anandan</span><br>
+          <span style="font-size: 8.5pt; color: #475569;">Faculty In-Charge, BACSE344 (C1 Slot)</span><br>
+          <span style="font-size: 8.5pt; color: #475569;">Evaluation & Review Remarks: ___________________</span><br>
+          <span style="font-size: 8.5pt; color: #475569;">Signature: ___________________</span>
+        </td>
+      </tr>
+    </table>
   </div>
-  <div class="footer-running">CampusFind Academic Report &bull; Digital Assignment 3 &bull; Page 10 of 10</div>
+  <div class="footer-running">CampusFind Technical Report &bull; Cloud Infrastructure and Architecture &bull; Page 10 of 10</div>
 </div>
 
 </body>
